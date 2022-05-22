@@ -5,11 +5,12 @@ import Home from "./components/Pages/Home/Home";
 import Login from "./components/Pages/Login/Login";
 import MyPortfolio from "./components/Pages/MyPortfolio/MyPortfolio";
 import Purchase from "./components/Pages/Purchase/Purchase";
+import Signup from "./components/Pages/Signup/Signup";
 import Loading from "./components/Shared/Loading/Loading";
 import Dashboard from "./components/Shared/Navbar/Dashboard/Dashboard";
 import Navbar from "./components/Shared/Navbar/Navbar";
 import NotFound from "./components/Shared/NotFound/NotFound";
-// import RequireAuth from "./components/Shared/RequireAuth/RequireAuth";
+import RequireAuth from "./components/Shared/RequireAuth/RequireAuth";
 
 function App() {
   return (
@@ -19,27 +20,27 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        
+
         <Route
           path="/purchase"
           element={
-            // <RequireAuth>
+            <RequireAuth>
               <Purchase />
-            // </RequireAuth>
+            </RequireAuth>
           }
         />
         <Route
           path="/dashboard"
           element={
-            // <RequireAuth>
+            <RequireAuth>
               <Dashboard />
-            // </RequireAuth>
+            </RequireAuth>
           }
         />
-        <Route path="/blogs" element={<Blogs/>} />
-        <Route path="/myportfolio" element={<MyPortfolio/>} />
-        <Route path="/login" element={<Login/>} />
-
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/myportfolio" element={<MyPortfolio />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <ToastContainer />
