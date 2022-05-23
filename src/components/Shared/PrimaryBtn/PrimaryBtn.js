@@ -2,7 +2,7 @@ import React from "react";
 
 const PrimaryBtn = () => {
   return (
-    <button class="btn btn-primary rounded-full hover:bg-neutral hover:text-white">
+    <button className="btn btn-primary rounded-full hover:bg-neutral hover:text-white">
       Button
     </button>
   );
