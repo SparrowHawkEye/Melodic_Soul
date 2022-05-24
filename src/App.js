@@ -7,7 +7,7 @@ import Login from "./components/Pages/Login/Login";
 import MyPortfolio from "./components/Pages/MyPortfolio/MyPortfolio";
 import Purchase from "./components/Pages/Purchase/Purchase";
 import Signup from "./components/Pages/Signup/Signup";
-import Loading from "./components/Shared/Loading/Loading";
+// import Loading from "./components/Shared/Loading/Loading";
 
 import Navbar from "./components/Shared/Navbar/Navbar";
 import NotFound from "./components/Shared/NotFound/NotFound";
@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="max-w-7xl mx-auto px-8">
       <Navbar />
-      <Loading />
+      {/* <Loading /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />

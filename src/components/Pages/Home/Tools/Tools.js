@@ -10,7 +10,6 @@ const Tools = () => {
         setTools(data);
       });
   }, []);
-  const tool = tools.slice(0,1)
   return (
     <div>
       <h2 className="text-4xl">Tools Section</h2>
