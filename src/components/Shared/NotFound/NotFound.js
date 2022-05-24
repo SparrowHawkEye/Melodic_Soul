@@ -9,6 +9,7 @@ import {
   SimpleGrid,
 } from "@mantine/core";
 import { Link } from "react-router-dom";
+import PageTitle from "../PageTitle/PageTitle";
 // import image from "./image.svg";
 
 const NotFound = () => {
@@ -49,21 +50,23 @@ const NotFound = () => {
   }));
   const { classes } = useStyles();
 
+  console.log(classes);
   /*  export function NotFoundImage() {
    */
 
   return (
     <Container className={classes.root}>
+      <PageTitle title="Not Found!!!" />
       <SimpleGrid
         spacing={80}
         cols={2}
         breakpoints={[{ maxWidth: "sm", cols: 1, spacing: 40 }]}
       >
-        <div className="animate-pulse">
-        <Image
-          src="https://ui.mantine.dev/_next/static/media/image.11cd6c19.svg"
-          className={classes.mobileImage}
-        />
+        <div className="animate-pulse md:hidden">
+          <Image
+            src="https://ui.mantine.dev/_next/static/media/image.11cd6c19.svg"
+            className={classes.mobileImage}
+          />
         </div>
         <div>
           <Title className={classes.title}>Something is not right...</Title>
@@ -83,12 +86,12 @@ const NotFound = () => {
             </Button>
           </Link>
         </div>
-       <div className="animate-pulse">
-       <Image
-          src="https://ui.mantine.dev/_next/static/media/image.11cd6c19.svg"
-          className={classes.desktopImage}
-        />
-       </div>
+        <div className="animate-pulse">
+          <Image
+            src="https://ui.mantine.dev/_next/static/media/image.11cd6c19.svg"
+            className={classes.desktopImage}
+          />
+        </div>
       </SimpleGrid>
     </Container>
   );

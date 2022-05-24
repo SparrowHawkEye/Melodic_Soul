@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
+import PageTitle from "../../Shared/PageTitle/PageTitle";
 // import useToken from "../../hooks/useToken";
 
 const Signup = () => {
@@ -50,6 +51,7 @@ const Signup = () => {
 
   return (
     <div className="flex justify-center items-center h-screen">
+      <PageTitle title="Sign Up" />
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="text-center text-2xl font-bold">Sign Up</h2>

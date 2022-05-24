@@ -1,0 +1,58 @@
+[
+  {
+    "img": "https://i.ibb.co/nR23gm3/7.png",
+    "name": "Musikshack Guitar Strap Cotton Tan 2 Inches",
+    "description": "Musikshack guitar and bass straps are made to give you great performance, durability, and comfort. MusikShak's commitment to quality extends to everything they make and sell. These straps are made from the best materials available, and there's a strap that's sure to fit your style.",
+    "minimumQuantity": 8,
+    "availableQuantity": 747,
+    "price": 3.99
+  },
+  {
+    "img": "https://i.ibb.co/L5VLbxP/4.png",
+    "name": "TC Electronic UniTune Clip Clip-on Chromatic Tuner ",
+    "description": "One thing TC Electronic tuners have always had over many other electronic tuners is their bright LED displays that are easy to see in many different lighting situations. The UniTune clip-on tuner has 105 high-powered LED lights that are bright enough to see even in daylight. And the display's adaptive technology automatically flips the readout so you can easily use the tuner in front or behind the headstock, and on right- and left-handed instruments.",
+    "minimumQuantity": 10,
+    "availableQuantity": 593,
+    "price": 11
+  },
+  {
+    "img": "https://i.ibb.co/PN1m83V/6.png",
+    "name": "Mogami Gold Instrument 10 Straight to Straight Instrument Cable",
+    "description": "Professional engineers and musicians around the world have turned to Mogami for high-quality audio cables solution that are built to last. In fact, Mogami has invested years of research into developing some of the most transparent, 'lossless' cables you can find. That's why the Sweetwater crew enthusiastically recommends them! So whether you're onstage or in the studio with a microphone, guitar, bass, or keyboard, you can trust Mogami cables to give you the full sound of your instrument, with ultra-low noise and maximum durability.",
+    "minimumQuantity": 5,
+    "availableQuantity": 981,
+    "price": 21
+  },
+  {
+    "img": "https://i.ibb.co/DwT8ZxY/1.png",
+    "name": "PRS Convertible String Winder",
+    "description": "The PRS Convertible String Winder serves as the 'Swiss Army knife' of guitar tools. With this multifunction winder, you get standard string winding for electric, acoustic, and even bass guitars. What makes this winder so exceptional is its added functionality. It sports an acoustic guitar bridge pin puller at the end of the handle with a detachable winding end that's compatible with most electric drills for lightning-fast string changes. Sweetwater players recommend throwing a winder in your case to tackle broken string emergencies — add the PRS Convertible String Winder to your arsenal for versatility that you can rely on in any situation!",
+    "minimumQuantity": 10,
+    "availableQuantity": 592,
+    "price": 11
+  },
+  {
+    "img": "https://i.ibb.co/gmVMGVm/3.png",
+    "name": "Dunlop PH122R114 James Hetfield White Fang Custom Guitar Picks 1.14mm 24-pack",
+    "description": "The White Fang has a smaller and lower-profile grip for outstanding control even when things get sweaty — ideal for digging in on power chords and chunky riffs. The blended beveled edge allows for better glide across the strings, and the wide angle and sharp tip provide a focused attack when needed. Heavy-hitting guitarists here at Sweetwater love the feel, response, and articulation of this custom-designed pick.",
+    "minimumQuantity": 10,
+    "availableQuantity": 88,
+    "price": 3
+  },
+  {
+    "img": "https://i.ibb.co/QYpxg0W/2.png",
+    "name": "Seymour Duncan High Voltage Bridge Humbucker Pickup - Gold Cover",
+    "description": "Designed to offer both pristine cleans and hard-rocking high-gain riffage for maximum tonal versatility Alnico 2 magnets deliver an old-school tone Slightly aggressive voicing for a punchier sound Specially calibrated and degaussed to perfectly match with a High Voltage Neck Humbucker",
+    "minimumQuantity": 3,
+    "availableQuantity": 343,
+    "price": 18
+  },
+  {
+    "img": "https://i.ibb.co/KV3gNq4/5.png",
+    "name": "G7th Performance 3 Steel String Guitar Capo - Black",
+    "description": "Brilliantly innovative squeeze-and-release capo slides up and down the neck effortlessly ART technology eliminates buzzing and out-of-tune strings Silicon neck pad and silicon side guards protect the finish on your neck Stores easily on peghead and nut",
+    "minimumQuantity": 9,
+    "availableQuantity": 468,
+    "price": 23
+  }
+]

@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from '../../../firebase.init'
 import Loading from "../../Shared/Loading/Loading";
+import PageTitle from "../../Shared/PageTitle/PageTitle";
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
@@ -27,7 +28,7 @@ const Login = () => {
     if (user || gUser) {
       navigate(from, { replace: true });
     }
-  }, [user, from, navigate]);
+  }, [user, from, navigate,gUser]);
 
   if (loading || gLoading) {
     return <Loading />;
@@ -41,6 +42,7 @@ const Login = () => {
 
   return (
     <div className="flex justify-center items-center h-screen">
+      <PageTitle title="Log In" />
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="text-center text-2xl font-bold">Log In</h2>
