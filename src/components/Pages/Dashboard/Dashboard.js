@@ -5,6 +5,7 @@ import PageTitle from "../../Shared/PageTitle/PageTitle";
 const Dashboard = () => {
   return (
     <div className="flex gap-5 mt-10">
+      <PageTitle title="Dashboard" />
       <aside class="w-[3.8rem] md:w-64 " aria-label="Sidebar">
         <div class=" py-4 px-3 bg-gray-50 rounded dark:bg-gray-800">
           <ul class="space-y-2">
