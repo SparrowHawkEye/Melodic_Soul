@@ -50,10 +50,6 @@ const NotFound = () => {
   }));
   const { classes } = useStyles();
 
-  console.log(classes);
-  /*  export function NotFoundImage() {
-   */
-
   return (
     <Container className={classes.root}>
       <PageTitle title="Not Found!!!" />

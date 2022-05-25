@@ -1,7 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import Blogs from "./components/Pages/Blogs/Blogs";
+import AddProduct from "./components/Pages/Dashboard/AddProduct";
+import AddReview from "./components/Pages/Dashboard/AddReview";
 import Dashboard from "./components/Pages/Dashboard/Dashboard";
+import MakeAdmin from "./components/Pages/Dashboard/MakeAdmin";
+import ManageOrders from "./components/Pages/Dashboard/ManageOrders";
+import MyOrder from "./components/Pages/Dashboard/MyOrder";
+import MyProfile from "./components/Pages/Dashboard/MyProfile";
 import Home from "./components/Pages/Home/Home";
 import Login from "./components/Pages/Login/Login";
 import MyPortfolio from "./components/Pages/MyPortfolio/MyPortfolio";
@@ -37,7 +43,35 @@ function App() {
               <Dashboard />
             </RequireAuth>
           }
-        />
+        >
+          <Route index element={<MyProfile />} />
+          <Route path="addreview" element={<AddReview />} />
+          <Route path="myorder" element={<MyOrder />} />
+          <Route
+            path="makeadmin"
+            element={
+              // <RequireAdmin>
+                <MakeAdmin />
+              // </RequireAdmin>
+            }
+          />
+          <Route
+            path="manageorders"
+            element={
+              // <RequireAdmin>
+                <ManageOrders />
+              // </RequireAdmin>
+            }
+          />
+          <Route
+            path="addproduct"
+            element={
+              // <RequireAdmin>
+                <AddProduct />
+              // </RequireAdmin>
+            }
+          />
+        </Route>
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/myportfolio" element={<MyPortfolio />} />
         <Route path="/login" element={<Login />} />
