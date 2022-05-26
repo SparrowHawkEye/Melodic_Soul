@@ -53,12 +53,12 @@ const Footer = () => {
         </Link>
         <small className="mx-1">
           by Maksud aka
-          <Link
-            to="https://github.com/SparrowHawkEye"
+          <a
+            href="https://github.com/SparrowHawkEye"
             className="hover:underline ml-1 hover:text-green-400"
           >
             SparrowHawkEye.
-          </Link>
+          </a>
         </small>
         All Rights Reserved.
       </span>
