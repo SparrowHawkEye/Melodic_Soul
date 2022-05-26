@@ -10,13 +10,13 @@ const TrustedBy = () => {
   return (
     <section className="section-featured my-5">
       <div className="container ">
-        <h2 className="heading-feature-in text-3xl">We Are Trusted By</h2>
-        <div className="logos ">
-          <img src={minarva} alt="Minerva Logo" />
-          <img src={arbovirus} alt="Arbovirus Logo" />
-          <img src={nemesis} alt="Nemesis Logo" />
-          <img src={shironamhin} alt="Shironamhin Logo" />
-          <img src={warfaze} alt="Warfaze Logo" />
+        <h2 className="heading-feature-in text-5xl text-success">We Are Trusted By</h2>
+        <div className="logos flex flex-col gap-3 md:justify-center items-center md:flex-row flex-wrap xl:flex-nowrap">
+          <img className="w-[60%] md:w-[30%]" src={minarva} alt="Minerva Logo" />
+          <img className="w-[60%] md:w-[30%]" src={arbovirus} alt="Arbovirus Logo" />
+          <img className="w-[60%] md:w-[30%]" src={nemesis} alt="Nemesis Logo" />
+          <img className="w-[60%] md:w-[30%]" src={shironamhin} alt="Shironamhin Logo" />
+          <img className="w-[60%] md:w-[30%]" src={warfaze} alt="Warfaze Logo" />
         </div>
       </div>
     </section>

@@ -51,45 +51,45 @@ const MyProfile = () => {
         </div>
         <div className="text-gray-700">
           <div className="grid md:grid-cols-2 text-sm">
-            <div className="grid grid-cols-2">
-              <div className="px-4 py-2 font-semibold">Name</div>
+            <div className="grid  grid-cols-1 md:grid-cols-2">
+              <div className="px-4 py-2 font-semibold">Name:</div>
               <div className="px-4 py-2">{displayName}</div>
             </div>
-            <div className="grid grid-cols-2">
-              <div className="px-4 py-2 font-semibold">Email.</div>
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              <div className="px-4 py-2 font-semibold">Email:</div>
               <div className="px-4 py-2">
                 <a className="text-blue-800" href={`mailto:${email}`}>
                   {email}
                 </a>
               </div>
             </div>
-            <div className="grid grid-cols-2">
-              <div className="px-4 py-2 font-semibold">Gender</div>
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              <div className="px-4 py-2 font-semibold">Gender:</div>
               <div className="px-4 py-2">
                 {gender ? gender : "Please Update Your Profile"}
               </div>
             </div>
-            <div className="grid grid-cols-2">
-              <div className="px-4 py-2 font-semibold">Phone No.</div>
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              <div className="px-4 py-2 font-semibold">Phone No:</div>
               <div className="px-4 py-2">
                 {phoneNo ? phoneNo : "Please Update Your Profile"}
               </div>
             </div>
-            <div className="grid grid-cols-2">
-              <div className="px-4 py-2 font-semibold">Address</div>
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              <div className="px-4 py-2 font-semibold">Address:</div>
               <div className="px-4 py-2">
                 {address ? address : "Please Update Your Profile"}
               </div>
             </div>
 
-            <div className="grid grid-cols-2">
-              <div className="px-4 py-2 font-semibold">Birthday</div>
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              <div className="px-4 py-2 font-semibold">Birthday:</div>
               <div className="px-4 py-2">
                 {birthday ? birthday : "Please Update Your Profile"}
               </div>
             </div>
-            <div className="grid grid-cols-2">
-              <div className="px-4 py-2 font-semibold">Social Media</div>
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              <div className="px-4 py-2 font-semibold">Social Media:</div>
               <div className="px-4 py-2 flex space-x-3">
                 <a
                   href="https://www.facebook.com/ami1dukhi/"
