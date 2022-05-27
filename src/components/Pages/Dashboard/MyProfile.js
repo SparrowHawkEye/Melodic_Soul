@@ -14,6 +14,7 @@ const MyProfile = () => {
     phoneNo,
     address,
     birthday,
+    twitterURL,
     linkURL,
     faceURL,
     gitURL,
@@ -22,7 +23,7 @@ const MyProfile = () => {
     <div>
       <div className="bg-white p-3 shadow-sm rounded-sm">
         <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
-          <span className="text-green-500">
+          <span className="text-primary">
             <svg
               className="h-5"
               xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +57,7 @@ const MyProfile = () => {
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="px-4 py-2 font-semibold">Email:</div>
               <div className="px-4 py-2">
-                <a className="text-blue-800" href={`mailto:${email}`}>
+                <a className="text-primary" href={`mailto:${email}`}>
                   {email}
                 </a>
               </div>
@@ -90,34 +91,44 @@ const MyProfile = () => {
               <div className="px-4 py-2 font-semibold">Social Media:</div>
               <div className="px-4 py-2 flex space-x-3">
                 <a
-                  href="https://www.facebook.com/ami1dukhi/"
+                  href={
+                    faceURL ? faceURL : "https://www.facebook.com/ami1dukhi/"
+                  }
                   target="_blank"
-                  className="hover:text-success text-lg"
+                  className="hover:text-primary text-lg"
                   rel="noreferrer"
                 >
                   <FaFacebookF />
                 </a>
                 <a
-                  href="https://twitter.com/SparrowHawk_Eye"
+                  href={
+                    twitterURL
+                      ? twitterURL
+                      : "https://twitter.com/SparrowHawk_Eye"
+                  }
                   target="_blank"
-                  className="hover:text-success text-lg"
+                  className="hover:text-primary text-lg"
                   rel="noreferrer"
                 >
                   <FaTwitter />
                 </a>
                 <a
-                  href="https://github.com/SparrowHawkEye"
+                  href={gitURL ? gitURL : "https://github.com/SparrowHawkEye"}
                   target="_blank"
                   rel="noreferrer"
-                  className="hover:text-success text-lg"
+                  className="hover:text-primary text-lg"
                 >
                   <FaGithub />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/maksudur-rahman-a9733a161/"
+                  href={
+                    linkURL
+                      ? linkURL
+                      : "https://www.linkedin.com/in/maksudur-rahman-a9733a161/"
+                  }
                   target="_blank"
                   rel="noreferrer"
-                  className="hover:text-success text-lg"
+                  className="hover:text-primary text-lg"
                 >
                   <FaLinkedinIn />
                 </a>
@@ -128,7 +139,7 @@ const MyProfile = () => {
 
         <label
           htmlFor="update-modal"
-          className="block  md:w-[35%] btn btn-success modal-button w-full text-white text-sm font-semibold rounded-lg hover:bg-gray-100 hover:text-success focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs p-3 my-4"
+          className="block md:w-[35%] btn btn-primary modal-button w-full text-white text-sm font-semibold rounded-lg hover:bg-white hover:text-primary focus:outline-none focus:shadow-outline focus:bg-white hover:shadow-xs p-3 my-4"
         >
           Update Your Profile
         </label>
@@ -141,7 +152,7 @@ const MyProfile = () => {
             >
               ✕
             </label>
-            <h2 className="text-2xl font-semibold text-success text-center mb-4">
+            <h2 className="text-2xl font-semibold text-primary text-center mb-4">
               Update Your Profile
             </h2>
             <ProfileUpdateForm />

@@ -24,13 +24,6 @@ const Footer = () => {
             Providing Musical Solution Since 2009
           </p>
         </div>
-        {/* <div>
-        <span className="footer-title">Services</span>
-        <a href='/' className="link link-hover">Branding</a>
-        <a href='/' className="link link-hover">Design</a>
-        <a href='/' className="link link-hover">Marketing</a>
-        <a href='/' className="link link-hover">Advertisement</a>
-      </div> */}
         <div>
           <span className="footer-title">Company</span>
           <a href='/' className="link link-hover">About us</a>
@@ -46,7 +39,7 @@ const Footer = () => {
         </div>
       </div>
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-2" />
-      <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
+      <span className="block  text-sm text-gray-500 mb-8 text-center dark:text-gray-400">
         © 2022
         <Link to="/" className="hover:underline hover:text-green-400 ml-1">
           Bookie House

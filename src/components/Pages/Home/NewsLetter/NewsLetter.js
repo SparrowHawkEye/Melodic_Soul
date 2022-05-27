@@ -16,16 +16,16 @@ const NewsLetter = () => {
               to your mail!
             </p>
           </div>
-          <div className="card mx-auto w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card mx-auto   shadow-2xl bg-base-100">
             <div className="card-body">
               <div className="form-control">
                 <div className="input-group ">
                   <input
                     type="email"
                     placeholder="abc@abc.com"
-                    className="input input-primary outline-none "
+                    className="input input-primary outline-none w-[85%]"
                   />
-                  <button className="btn btn-primary">Subscribe</button>
+                  <button className="btn btn-primary text-white">Subscribe</button>
                 </div>
               </div>
             </div>

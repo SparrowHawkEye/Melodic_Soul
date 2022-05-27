@@ -35,12 +35,12 @@ const Navbar = () => {
       {user && (
         <>
           <li>
-            <Link to="/" className="justify-between">
-              Profile
-            </Link>
+            <p className="justify-between">
+              {user.displayName}
+            </p>
           </li>
           <li>
-            <Link to="/">Settings</Link>
+            <p>{user.email}</p>
           </li>
           <li>
             <Link to="/" onClick={() => signOut(auth)}>
@@ -56,7 +56,7 @@ const Navbar = () => {
       )}
     </>
   );
-
+console.log(user?.photoURL);
   return (
     <div className="navbar bg-base-100 ">
       <div className="navbar-start">
@@ -85,7 +85,7 @@ const Navbar = () => {
           </ul>
         </div>
         <lord-icon
-          src="https://cdn.lordicon.com/vnxmkidq.json"
+          src= {user?.photoURL?user.photoURL :"https://cdn.lordicon.com/vnxmkidq.json"}
           trigger="loop"
           delay="20"
           colors="primary:#84B442,secondary:#5B772E"

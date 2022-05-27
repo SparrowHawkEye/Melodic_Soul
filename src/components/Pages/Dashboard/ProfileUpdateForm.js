@@ -62,7 +62,7 @@ const ProfileUpdateForm = () => {
         <option>Female</option>
       </select>
       <br />
-      <input className="btn btn-success" type="submit" value="Update" />
+      <input className="btn btn-primary text-white text-sm font-semibold rounded-lg hover:bg-white hover:text-primary focus:outline-none focus:shadow-outline focus:bg-white  hover:shadow-xs px-8" type="submit" value="Update" />
     </form>
   );
 };
