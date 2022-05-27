@@ -13,7 +13,7 @@ const Navbar = () => {
       </li>
       {user && (
         <>
-        {/*   <li>
+          {/*   <li>
             <Link to="/purchase">Purchase</Link>
           </li> */}
           <li>
@@ -35,9 +35,7 @@ const Navbar = () => {
       {user && (
         <>
           <li>
-            <p className="justify-between">
-              {user.displayName}
-            </p>
+            <p className="justify-between">{user.displayName}</p>
           </li>
           <li>
             <p>{user.email}</p>
@@ -56,7 +54,7 @@ const Navbar = () => {
       )}
     </>
   );
-console.log(user?.photoURL);
+
   return (
     <div className="navbar bg-base-100 ">
       <div className="navbar-start">
@@ -85,7 +83,11 @@ console.log(user?.photoURL);
           </ul>
         </div>
         <lord-icon
-          src= {user?.photoURL?user.photoURL :"https://cdn.lordicon.com/vnxmkidq.json"}
+          src={
+            user?.photoURL
+              ? user.photoURL
+              : "https://cdn.lordicon.com/vnxmkidq.json"
+          }
           trigger="loop"
           delay="20"
           colors="primary:#84B442,secondary:#5B772E"

@@ -55,6 +55,12 @@ const ProfileUpdateForm = () => {
         placeholder="Your Github Link"
         className="input input-bordered w-full max-w-xs mb-3"
       />
+      <input
+        type="url"
+        name="imgLink"
+        placeholder="Your Image"
+        className="input input-bordered w-full max-w-xs mb-3"
+      />
 
       <select className="select select-bordered w-full max-w-xs mb-3">
         <option disabled defaultValue>Select Your Gender</option>

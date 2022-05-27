@@ -9,15 +9,8 @@ const Purchase = () => {
   const { itemId } = useParams();
   const [product] = useProductDetails(itemId);
   const [user] = useAuthState(auth);
-  const {
-    _id,
-    img,
-    name,
-    description,
-    minimumQuantity,
-    availableQuantity,
-    price,
-  } = product;
+  const { img, name, description, minimumQuantity, availableQuantity, price } =
+    product;
   const [purchaseAmount, setPurchaseAmount] = useState("");
 
   const SubmitButton = () => {
@@ -29,9 +22,8 @@ const Purchase = () => {
         <>
           {purchaseAmount && (
             <p className="text-red-500 text-sm">
-              {" "}
-              Please insert a value more than {minimumQuantity} and less then{" "}
-              {availableQuantity}{" "}
+              Please insert a value more than {minimumQuantity} and less then
+              {availableQuantity}
             </p>
           )}
           <input

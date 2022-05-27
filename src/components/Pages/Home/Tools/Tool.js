@@ -10,20 +10,20 @@ const Tool = ({ tool }) => {
   const { name, description, img, price, _id } = tool;
 
   return (
-    <div class="card  bg-base-100 shadow-xl">
+    <div className="card  bg-base-100 shadow-xl">
       <figure>
         <img src={img} alt={name} />
       </figure>
-      <div class="card-body">
-        <h2 class="card-title text-primary">{name}</h2>
+      <div className="card-body">
+        <h2 className="card-title text-primary">{name}</h2>
         <p>{description.slice(0, 100)}....</p>
-        <h2 class="card-title gap-0">
+        <h2 className="card-title gap-0">
           Price:<span className="text-sm ml-2">$</span>
           <span className="text-primary">{price}</span>
         </h2>
-        <div class="card-actions justify-end">
+        <div className="card-actions justify-end">
           <button
-            class="btn btn-primary"
+            className="btn btn-primary"
             onClick={() => navigateToToolDetails(_id)}
           >
             Buy Now
