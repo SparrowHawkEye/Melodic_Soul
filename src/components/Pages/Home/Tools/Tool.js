@@ -1,9 +1,8 @@
 import React from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Tool.css";
 
 const Tool = ({ tool }) => {
-  
   const navigate = useNavigate();
   const navigateToToolDetails = (id) => {
     navigate(`/purchase/${id}`);

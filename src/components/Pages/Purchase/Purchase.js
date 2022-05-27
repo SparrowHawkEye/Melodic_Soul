@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import auth from "../../../firebase.init";
@@ -7,7 +7,7 @@ import Footer from "../../Shared/Footer/Footer";
 
 const Purchase = () => {
   const { itemId } = useParams();
-  const [product, setProduct] = useProductDetails(itemId);
+  const [product] = useProductDetails(itemId);
   const [user] = useAuthState(auth);
   const {
     _id,
@@ -18,7 +18,38 @@ const Purchase = () => {
     availableQuantity,
     price,
   } = product;
-  console.log(user);
+  const [purchaseAmount, setPurchaseAmount] = useState("");
+
+  const SubmitButton = () => {
+    console.log(minimumQuantity, availableQuantity, purchaseAmount);
+    if (
+      minimumQuantity > purchaseAmount ||
+      availableQuantity < purchaseAmount
+    ) {
+      return <>
+      {purchaseAmount && <p className="text-red-500 text-sm"> Please insert a value more than {minimumQuantity} and less then {availableQuantity} </p> }
+      <input
+        type="submit"
+        value="Purchase"
+        class="btn btn-primary text-base-100"
+        disabled
+      />
+      </>
+    } else {
+     return <input
+        type="submit"
+        value="Purchase"
+        class="btn btn-primary text-base-100"
+      />;
+    }
+  };
+
+  const handlePurchaseSubmit = (e) => {
+    e.preventDefault();
+    const phoneNo = e.target.phone.value;
+    const purchaseAmount = e.target.amount.value;
+    console.log("hello from purchase", phoneNo, purchaseAmount);
+  };
   return (
     <>
       <div class="hero-content flex-col justify-around lg:flex-row-reverse">
@@ -58,7 +89,7 @@ const Purchase = () => {
         </div>
         {/* User Input to purchase  */}
         <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <div class="card-body">
+          <form onSubmit={handlePurchaseSubmit} class="card-body">
             <div class="form-control">
               <label class="label">
                 <span class="label-text">Email</span>
@@ -83,7 +114,31 @@ const Purchase = () => {
                 disabled
               />
             </div>
-          </div>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Phone No.</span>
+              </label>
+              <input
+                type="tel"
+                placeholder="+123-456-7890"
+                name="phone"
+                class="input input-bordered"
+              />
+            </div>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Purchase Amount</span>
+              </label>
+              <input
+                onChange={(e) => setPurchaseAmount(e.target.value)}
+                type="number"
+                placeholder="Purchase Amount"
+                name="amount"
+                class="input input-bordered"
+              />
+            </div>
+            <SubmitButton />
+          </form>
         </div>
       </div>
       <Footer />

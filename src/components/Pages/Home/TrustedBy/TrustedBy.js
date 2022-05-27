@@ -8,15 +8,38 @@ import "./TrustedBy.css";
 
 const TrustedBy = () => {
   return (
-    <section className="section-featured my-5">
+    <section className="section-featured mb-20">
       <div className="container ">
-        <h2 className="heading-feature-in text-5xl text-success">We Are Trusted By</h2>
+        <h2 className="text-2xl font-bold text-center text-primary">Group</h2>
+        <h2 className="text-3xl font-bold text-center text-gray-400 mb-6">
+          Who Trusted Us
+        </h2>
         <div className="logos flex flex-col gap-3 md:justify-center items-center md:flex-row flex-wrap xl:flex-nowrap">
-          <img className="w-[60%] md:w-[30%]" src={minarva} alt="Minerva Logo" />
-          <img className="w-[60%] md:w-[30%]" src={arbovirus} alt="Arbovirus Logo" />
-          <img className="w-[60%] md:w-[30%]" src={nemesis} alt="Nemesis Logo" />
-          <img className="w-[60%] md:w-[30%]" src={shironamhin} alt="Shironamhin Logo" />
-          <img className="w-[60%] md:w-[30%]" src={warfaze} alt="Warfaze Logo" />
+          <img
+            className="w-[60%] md:w-[30%]"
+            src={minarva}
+            alt="Minerva Logo"
+          />
+          <img
+            className="w-[60%] md:w-[30%]"
+            src={arbovirus}
+            alt="Arbovirus Logo"
+          />
+          <img
+            className="w-[60%] md:w-[30%]"
+            src={nemesis}
+            alt="Nemesis Logo"
+          />
+          <img
+            className="w-[60%] md:w-[30%]"
+            src={shironamhin}
+            alt="Shironamhin Logo"
+          />
+          <img
+            className="w-[60%] md:w-[30%]"
+            src={warfaze}
+            alt="Warfaze Logo"
+          />
         </div>
       </div>
     </section>
