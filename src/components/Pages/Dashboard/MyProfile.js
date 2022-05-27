@@ -6,7 +6,6 @@ import ProfileUpdateForm from "./ProfileUpdateForm";
 
 const MyProfile = () => {
   const [user] = useAuthState(auth);
-  console.log(user);
   const {
     displayName,
     photoURL: img,
@@ -19,12 +18,11 @@ const MyProfile = () => {
     faceURL,
     gitURL,
   } = user;
-
   return (
     <div>
       <div className="bg-white p-3 shadow-sm rounded-sm">
         <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
-          <span clas="text-green-500">
+          <span className="text-green-500">
             <svg
               className="h-5"
               xmlns="http://www.w3.org/2000/svg"
@@ -33,9 +31,9 @@ const MyProfile = () => {
               stroke="currentColor"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
               />
             </svg>
@@ -129,7 +127,7 @@ const MyProfile = () => {
         </div>
 
         <label
-          for="update-modal"
+          htmlFor="update-modal"
           className="block  md:w-[35%] btn btn-success modal-button w-full text-white text-sm font-semibold rounded-lg hover:bg-gray-100 hover:text-success focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs p-3 my-4"
         >
           Update Your Profile
@@ -138,13 +136,12 @@ const MyProfile = () => {
         <div className="modal">
           <div className="modal-box relative">
             <label
-              for="update-modal"
+              htmlFor="update-modal"
               className="btn btn-sm btn-circle absolute right-2 top-2"
             >
               ✕
             </label>
             <h2 className="text-2xl font-semibold text-success text-center mb-4">
-              {" "}
               Update Your Profile
             </h2>
             <ProfileUpdateForm />

@@ -5,14 +5,8 @@ const MyPortfolio = () => {
   return (
     <div className="m-10 mx-auto p-16 sm:p-24 lg:p-48 bg-gray-200">
       <PageTitle title="My Portfolio" />
-      <div
-        className="relative rounded-lg block md:flex items-center bg-gray-100 shadow-xl"
-        // style="min-height: 19rem;"
-      >
-        <div
-          className="relative w-full md:w-2/5 h-full overflow-hidden rounded-t-lg md:rounded-t-none md:rounded-l-lg"
-          // style="min-height: 19rem;"
-        >
+      <div className="relative rounded-lg block md:flex items-center bg-gray-100 shadow-xl">
+        <div className="relative w-full md:w-2/5 h-full overflow-hidden rounded-t-lg md:rounded-t-none md:rounded-l-lg">
           <img
             className="absolute inset-0 w-full h-full object-cover object-center"
             src="https://i.ibb.co/nR23gm3/7.png"
@@ -54,7 +48,7 @@ const MyPortfolio = () => {
             <polygon points="50,0 100,0 50,100 0,100" />
           </svg>
         </div>
-       {/*  <button className="absolute top-0 mt-32 left-0 bg-white rounded-full shadow-md h-12 w-12 text-2xl text-indigo-600 hover:text-indigo-400 focus:text-indigo-400 -ml-6 focus:outline-none focus:shadow-outline">
+        {/*  <button className="absolute top-0 mt-32 left-0 bg-white rounded-full shadow-md h-12 w-12 text-2xl text-indigo-600 hover:text-indigo-400 focus:text-indigo-400 -ml-6 focus:outline-none focus:shadow-outline">
           <span className="block" style={{"transform": "scale(-1)"}}>
             &#x279c;
           </span>
@@ -72,15 +66,15 @@ const MyPortfolio = () => {
             className="w-full"
             src="https://i.ibb.co/nR23gm3/7.png"
             alt=""
-            style={{ "max-height": "60px" }}
+            style={{ maxHeight: "60px" }}
           />
         </button>
-       {/*  <button className="px-2 opacity-50 hover:opacity-100 focus:opacity-100">
+        {/*  <button className="px-2 opacity-50 hover:opacity-100 focus:opacity-100">
           <img
             className="w-full"
             src="https://stripe.com/img/v3/payments/overview/logos/slack.svg"
             alt=""
-            style="max-height: 60px;"
+            style="maxheight: 60px;"
           />
         </button>
         <button className="px-2 opacity-50 hover:opacity-100 focus:opacity-100">
@@ -88,7 +82,7 @@ const MyPortfolio = () => {
             className="w-full"
             src="https://stripe.com/img/v3/payments/overview/logos/glossier.svg"
             alt=""
-            style="max-height: 60px;"
+            style="maxheight: 60px;"
           />
         </button>
         <button className="px-2 opacity-50 hover:opacity-100 focus:opacity-100">
@@ -96,7 +90,7 @@ const MyPortfolio = () => {
             className="w-full"
             src="https://stripe.com/img/v3/payments/overview/logos/charity_water.svg"
             alt=""
-            style="max-height: 60px;"
+            style="maxheight: 60px;"
           />
         </button>
         <button className="px-2 opacity-100 hover:opacity-100 focus:opacity-100">
@@ -104,7 +98,7 @@ const MyPortfolio = () => {
             className="w-full"
             src="https://stripe.com/img/v3/payments/overview/logos/missguided.svg"
             alt=""
-            style="max-height: 60px;"
+            style="maxheight: 60px;"
           />
         </button> */}
       </div>

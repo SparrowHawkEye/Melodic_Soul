@@ -37,7 +37,7 @@ const Purchase = () => {
           <input
             type="submit"
             value="Purchase"
-            class="btn btn-primary text-base-100"
+            className="btn btn-primary text-base-100"
             disabled
           />
         </>
@@ -47,7 +47,7 @@ const Purchase = () => {
         <input
           type="submit"
           value="Purchase"
-          class="btn btn-primary text-base-100"
+          className="btn btn-primary text-base-100"
         />
       );
     }
@@ -61,14 +61,14 @@ const Purchase = () => {
   };
   return (
     <>
-      <div class="hero-content flex-col justify-around lg:flex-row-reverse">
-        <div class="card flex-shrink-0 w-full max-w-xl shadow-2xl bg-base-100">
-          <div class="card w-full bg-base-100 shadow-xl">
+      <div className="hero-content flex-col justify-around lg:flex-row-reverse">
+        <div className="card flex-shrink-0 w-full max-w-xl shadow-2xl bg-base-100">
+          <div className="card w-full bg-base-100 shadow-xl">
             <figure>
               <img src={img} alt={name} />
             </figure>
-            <div class="card-body">
-              <h2 class="card-title text-primary text-2xl">{name}</h2>
+            <div className="card-body">
+              <h2 className="card-title text-primary text-2xl">{name}</h2>
               <p className="text-sm my-4">{description}</p>
               <p>
                 <span className="text-success font-semibold text-lg">
@@ -97,53 +97,53 @@ const Purchase = () => {
           </div>
         </div>
         {/* User Input to purchase  */}
-        <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <form onSubmit={handlePurchaseSubmit} class="card-body">
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Email</span>
+        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <form onSubmit={handlePurchaseSubmit} className="card-body">
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Email</span>
               </label>
               <input
                 type="email"
                 // placeholder="email"
-                class="input input-bordered"
+                className="input input-bordered"
                 value={user.email}
                 disabled
               />
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Name</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Name</span>
               </label>
               <input
                 type="text"
                 // placeholder="email"
-                class="input input-bordered"
+                className="input input-bordered"
                 value={user.displayName}
                 disabled
               />
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Phone No.</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Phone No.</span>
               </label>
               <input
                 type="tel"
                 placeholder="+123-456-7890"
                 name="phone"
-                class="input input-bordered"
+                className="input input-bordered"
               />
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Purchase Amount</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Purchase Amount</span>
               </label>
               <input
                 onChange={(e) => setPurchaseAmount(e.target.value)}
                 type="number"
                 placeholder="Purchase Amount"
                 name="amount"
-                class="input input-bordered"
+                className="input input-bordered"
               />
             </div>
             <SubmitButton />

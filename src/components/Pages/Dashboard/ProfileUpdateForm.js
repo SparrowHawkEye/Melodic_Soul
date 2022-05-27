@@ -1,22 +1,21 @@
 import React from "react";
 
 const ProfileUpdateForm = () => {
-  const handleSubmit= (e) =>{
-    e.preventDefault()
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const phoneNo = e.target.number.value;
     const date = e.target.date.value;
-    const faceURL = e.target.facebook.value
-    const twitterURL = e.target.twitter.value
-    const linkedinURL = e.target.linkedin.value
-    const githubURL = e.target.github.value
-    console.log(phoneNo,date,faceURL,twitterURL,linkedinURL,githubURL);
-
-  }
+    const faceURL = e.target.facebook.value;
+    const twitterURL = e.target.twitter.value;
+    const linkedinURL = e.target.linkedin.value;
+    const githubURL = e.target.github.value;
+    console.log(phoneNo, date, faceURL, twitterURL, linkedinURL, githubURL);
+  };
   return (
-    <form onSubmit={handleSubmit} className='flex flex-col justify-center items-center'>
-     {/*  <label className="label">
-        <span className="label-text">What is your name?</span>
-      </label> */}
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col justify-center items-center"
+    >
       <input
         type="number"
         name="number"
@@ -58,9 +57,7 @@ const ProfileUpdateForm = () => {
       />
 
       <select className="select select-bordered w-full max-w-xs mb-3">
-        <option disabled selected >
-          Select Your Gender
-        </option>
+        <option disabled defaultValue>Select Your Gender</option>
         <option>Male</option>
         <option>Female</option>
       </select>
