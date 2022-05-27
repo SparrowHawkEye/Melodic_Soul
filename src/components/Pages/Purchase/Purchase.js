@@ -21,26 +21,35 @@ const Purchase = () => {
   const [purchaseAmount, setPurchaseAmount] = useState("");
 
   const SubmitButton = () => {
-    console.log(minimumQuantity, availableQuantity, purchaseAmount);
     if (
       minimumQuantity > purchaseAmount ||
       availableQuantity < purchaseAmount
     ) {
-      return <>
-      {purchaseAmount && <p className="text-red-500 text-sm"> Please insert a value more than {minimumQuantity} and less then {availableQuantity} </p> }
-      <input
-        type="submit"
-        value="Purchase"
-        class="btn btn-primary text-base-100"
-        disabled
-      />
-      </>
+      return (
+        <>
+          {purchaseAmount && (
+            <p className="text-red-500 text-sm">
+              {" "}
+              Please insert a value more than {minimumQuantity} and less then{" "}
+              {availableQuantity}{" "}
+            </p>
+          )}
+          <input
+            type="submit"
+            value="Purchase"
+            class="btn btn-primary text-base-100"
+            disabled
+          />
+        </>
+      );
     } else {
-     return <input
-        type="submit"
-        value="Purchase"
-        class="btn btn-primary text-base-100"
-      />;
+      return (
+        <input
+          type="submit"
+          value="Purchase"
+          class="btn btn-primary text-base-100"
+        />
+      );
     }
   };
 
