@@ -12,7 +12,7 @@ const CheckoutForm = ({ order }) => {
 
   const [processing, setProcessing] = useState(false);
 
-  const { _id, total, email, productName, displayName, amount } = order;
+  const { _id, total, email, displayName,  } = order;
 
   useEffect(() => {
     fetch("http://localhost:5000/create-payment-intent", {

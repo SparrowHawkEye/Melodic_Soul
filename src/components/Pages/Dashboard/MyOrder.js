@@ -79,7 +79,10 @@ const MyOrder = () => {
                   <td>
                     {order?.total && !order?.paid && (
                       <Link to={`/dashboard/payment/${order._id}`}>
-                        <button className="btn btn-xs btn-primary text-white"> PAY </button>
+                        <button className="btn btn-xs btn-primary text-white">
+                          {" "}
+                          PAY{" "}
+                        </button>
                       </Link>
                     )}
                     {order?.total && order?.paid && (
@@ -94,12 +97,14 @@ const MyOrder = () => {
                     )}
                   </td>
                   <td>
-                    <button
-                      onClick={() => handleOrderDelete(order?._id)}
-                      className="btn btn-xs btn-error px-8 text-white"
-                    >
-                      Delete
-                    </button>
+                    {!order?.paid && (
+                      <button
+                        onClick={() => handleOrderDelete(order?._id)}
+                        className="btn btn-xs btn-error px-8 text-white"
+                      >
+                        Delete
+                      </button>
+                    )}
                   </td>
                 </tr>
               ))}

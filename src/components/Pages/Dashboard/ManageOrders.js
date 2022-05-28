@@ -17,6 +17,8 @@ const ManageOrders = () => {
     return <Loading />;
   }
 
+  
+
   const handleOrderDelete = (id) => {
     Swal.fire({
       title: "Are you sure to delete this?",

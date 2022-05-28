@@ -48,7 +48,7 @@ const Purchase = () => {
   const handlePurchaseSubmit = (e) => {
     e.preventDefault();
     const amount = parseInt(e.target.amount.value);
-    const total = parseFloat(price)*amount
+    const total = parseInt(price)*amount
     const order = {
       productName: e.target.productName.value,
       email: e.target.email.value,
