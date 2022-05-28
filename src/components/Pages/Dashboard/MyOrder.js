@@ -15,7 +15,7 @@ const MyOrder = () => {
     isLoading,
     refetch,
   } = useQuery("myOrders", () =>
-    fetch(`http://localhost:5000/myOrders?email=${email}`).then((res) =>
+    fetch(`https://secret-temple-83800.herokuapp.com/myOrders?email=${email}`).then((res) =>
       res.json()
     )
   );
@@ -34,7 +34,7 @@ const MyOrder = () => {
       confirmButtonText: "Yeahh ",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://secret-temple-83800.herokuapp.com/orders/${id}`, {
           method: "DELETE",
           headers: {
             "content-type": "application/json",
@@ -58,8 +58,8 @@ const MyOrder = () => {
         Your Orders: {myOrders?.length}
       </h1>
       <div>
-        <div className="overflow-x-auto">
-          <table className="table w-full">
+        <div className="">
+          <table className="table overflow-auto ">
             <thead>
               <tr>
                 <th> Serial </th>
@@ -77,12 +77,12 @@ const MyOrder = () => {
                   <td> {order?.amount} </td>
                   <td> {order?.total} </td>
                   <td>
-                    {order?.price && !order?.paid && (
+                    {order?.total && !order?.paid && (
                       <Link to={`/dashboard/payment/${order._id}`}>
-                        <button className="btn btn-xs"> PAY </button>
+                        <button className="btn btn-xs btn-primary text-white"> PAY </button>
                       </Link>
                     )}
-                    {order?.price && order?.paid && (
+                    {order?.total && order?.paid && (
                       <div>
                         <p>
                           <span className="text-red-500"> Paid </span>

@@ -8,6 +8,7 @@ import MakeAdmin from "./components/Pages/Dashboard/MakeAdmin";
 import ManageOrders from "./components/Pages/Dashboard/ManageOrders";
 import MyOrder from "./components/Pages/Dashboard/MyOrder";
 import MyProfile from "./components/Pages/Dashboard/MyProfile";
+import Payment from "./components/Pages/Dashboard/Payment";
 import Home from "./components/Pages/Home/Home";
 import Login from "./components/Pages/Login/Login";
 import MyPortfolio from "./components/Pages/MyPortfolio/MyPortfolio";
@@ -64,6 +65,7 @@ function App() {
               </RequireAdmin>
             }
           />
+          <Route path="payment/:id" element={<Payment/> }></Route>
           <Route
             path="addproduct"
             element={

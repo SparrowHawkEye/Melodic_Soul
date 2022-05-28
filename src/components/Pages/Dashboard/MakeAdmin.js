@@ -9,7 +9,7 @@ const MakeAdmin = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch("http://localhost:5000/users").then((res) => res.json())
+    fetch("https://secret-temple-83800.herokuapp.com/users").then((res) => res.json())
   );
 
   if (isLoading) {

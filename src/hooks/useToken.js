@@ -8,7 +8,7 @@ const useToken = (user) => {
     const email = user?.user?.email;
     if (email) {
       const userInfo = { email: user?.user?.email };
-      fetch(`http://localhost:5000/userData/${email}`, {
+      fetch(`https://secret-temple-83800.herokuapp.com/userData/${email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
