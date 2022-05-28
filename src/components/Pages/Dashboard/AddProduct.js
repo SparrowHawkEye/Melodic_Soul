@@ -32,7 +32,7 @@ const AddProduct = (e) => {
             description: data.des,
             img: img,
           };
-          fetch("https://secret-temple-83800.herokuapp.com/products", {
+          fetch("http://localhost:5000/products", {
             method: "POST",
             headers: {
               "content-type": "application/json",

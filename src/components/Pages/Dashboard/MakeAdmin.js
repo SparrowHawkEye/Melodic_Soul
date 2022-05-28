@@ -9,7 +9,9 @@ const MakeAdmin = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch("https://secret-temple-83800.herokuapp.com/users").then((res) => res.json())
+    fetch("http://localhost:5000/users").then((res) =>
+      res.json()
+    )
   );
 
   if (isLoading) {
@@ -26,7 +28,7 @@ const MakeAdmin = () => {
             </tr>
           </thead>
           <tbody>
-            {users.map((user, index) => (
+            {users?.map((user, index) => (
               <SingleUser
                 key={user._id}
                 user={user}

@@ -9,7 +9,7 @@ const AddReview = () => {
   const { displayName, email, photoURL } = user;
   const { register, handleSubmit, reset } = useForm();
   const handleAddReview = (data) => {
-    const url = `https://secret-temple-83800.herokuapp.com/reviews`;
+    const url = `http://localhost:5000/reviews`;
     fetch(url, {
       method: "POST",
       headers: {

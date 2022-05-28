@@ -15,7 +15,7 @@ const Payment = () => {
   const {
     data: order,
     isLoading,
-    refetch,
+    // refetch,
   } = useQuery(["order", id], () =>
     fetch(url, {
       method: "GET",

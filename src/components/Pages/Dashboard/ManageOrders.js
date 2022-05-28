@@ -3,14 +3,14 @@ import { useQuery } from "react-query";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import Loading from "../../Shared/Loading/Loading";
-// https://secret-temple-83800.herokuapp.com/
+// http://localhost:5000/
 const ManageOrders = () => {
   const {
     data: allOrders,
     isLoading,
     refetch,
   } = useQuery("allOrders", () =>
-    fetch("https://secret-temple-83800.herokuapp.com/orders").then((res) => res.json())
+    fetch("http://localhost:5000/orders").then((res) => res.json())
   );
 
   if (isLoading) {
@@ -27,7 +27,7 @@ const ManageOrders = () => {
       confirmButtonText: "Yeahh ",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://secret-temple-83800.herokuapp.com/orders/${id}`, {
+        fetch(`http://localhost:5000/orders/${id}`, {
           method: "DELETE",
           headers: {
             "content-type": "application/json",
