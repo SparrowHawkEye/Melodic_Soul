@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
-import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
 import useProductDetails from "../../../hooks/useProductDetails";
 import Footer from "../../Shared/Footer/Footer";

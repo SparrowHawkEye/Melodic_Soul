@@ -17,6 +17,7 @@ import Signup from "./components/Pages/Signup/Signup";
 
 import Navbar from "./components/Shared/Navbar/Navbar";
 import NotFound from "./components/Shared/NotFound/NotFound";
+import RequireAdmin from "./components/Shared/RequireAdmin";
 import RequireAuth from "./components/Shared/RequireAuth/RequireAuth";
 
 function App() {
@@ -50,25 +51,25 @@ function App() {
           <Route
             path="makeadmin"
             element={
-              // <RequireAdmin>
+              <RequireAdmin>
                 <MakeAdmin />
-              // </RequireAdmin>
+              </RequireAdmin>
             }
           />
           <Route
             path="manageorders"
             element={
-              // <RequireAdmin>
+              <RequireAdmin>
                 <ManageOrders />
-              // </RequireAdmin>
+              </RequireAdmin>
             }
           />
           <Route
             path="addproduct"
             element={
-              // <RequireAdmin>
+              <RequireAdmin>
                 <AddProduct />
-              // </RequireAdmin>
+              </RequireAdmin>
             }
           />
         </Route>

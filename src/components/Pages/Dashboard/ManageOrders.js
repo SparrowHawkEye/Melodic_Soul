@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import Loading from "../../Shared/Loading/Loading";
-
+// http://localhost:5000/
 const ManageOrders = () => {
   const {
     data: allOrders,
