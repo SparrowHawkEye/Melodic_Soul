@@ -15,7 +15,7 @@ const CheckoutForm = ({ order }) => {
   const { _id, total, email, displayName,  } = order;
 
   useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
+    fetch("https://secret-temple-83800.herokuapp.com/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -80,7 +80,7 @@ const CheckoutForm = ({ order }) => {
         order: _id,
         transactionId: paymentIntent.id,
       };
-      fetch(`http://localhost:5000/orders/${_id}`, {
+      fetch(`https://secret-temple-83800.herokuapp.com/orders/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

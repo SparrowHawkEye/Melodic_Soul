@@ -15,7 +15,7 @@ const MyOrder = () => {
     isLoading,
     refetch,
   } = useQuery("myOrders", () =>
-    fetch(`http://localhost:5000/myOrders?email=${email}`).then((res) =>
+    fetch(`https://secret-temple-83800.herokuapp.com/myOrders?email=${email}`).then((res) =>
       res.json()
     )
   );
@@ -34,7 +34,7 @@ const MyOrder = () => {
       confirmButtonText: "Yeahh ",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://secret-temple-83800.herokuapp.com/orders/${id}`, {
           method: "DELETE",
           headers: {
             "content-type": "application/json",

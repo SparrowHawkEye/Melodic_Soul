@@ -57,7 +57,7 @@ const Purchase = () => {
       amount: amount,
       total: total
     };
-    const url = `http://localhost:5000/orders`;
+    const url = `https://secret-temple-83800.herokuapp.com/orders`;
     fetch(url, {
       method: "POST",
       headers: {
