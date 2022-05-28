@@ -41,7 +41,13 @@ const Navbar = () => {
             <p>{user.email}</p>
           </li>
           <li>
-            <Link to="/" onClick={() => signOut(auth)}>
+            <Link
+              to="/"
+              onClick={() => {
+                signOut(auth);
+                localStorage.removeItem('accessToken');
+              }}
+            >
               Sign Out
             </Link>
           </li>
@@ -77,7 +83,7 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex="0"
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-50"
           >
             {menuItems}
           </ul>

@@ -5,8 +5,9 @@ import {
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import useToken from "../../../hooks/useToken";
 import Loading from "../../Shared/Loading/Loading";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
 // import useToken from "../../hooks/useToken";
@@ -17,9 +18,11 @@ const Signup = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-  // const [token] = useToken(user || gUser);
+  const [token] = useToken(user || gUser);
 
+  const location = useLocation();
   const navigate = useNavigate();
+  let from = location.state?.from?.pathname || "/";
 
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
@@ -45,8 +48,10 @@ const Signup = () => {
     );
   }
 
-  if (user||gUser) {
-    navigate("/purchase");
+  if (token) {
+    navigate(from, {
+      replace: true,
+    });
   }
 
   return (

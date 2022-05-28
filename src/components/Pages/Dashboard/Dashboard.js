@@ -6,7 +6,7 @@ const Dashboard = () => {
   return (
     <div className="flex gap-5 mt-10">
       <PageTitle title="Dashboard" />
-      <aside className="w-[3.8rem] md:w-64 " aria-label="Sidebar">
+      <aside className="w-[3.8rem] md:w-64 z-40" aria-label="Sidebar">
         <div className=" py-4 px-3 bg-gray-50 rounded dark:bg-gray-800">
           <ul className="space-y-2">
             {/* My Profile */}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
 import useProductDetails from "../../../hooks/useProductDetails";
 import Footer from "../../Shared/Footer/Footer";
@@ -22,7 +23,7 @@ const Purchase = () => {
         <>
           {purchaseAmount && (
             <p className="text-red-500 text-sm">
-              Please insert a value more than {minimumQuantity} and less then
+              Please insert a value more than {minimumQuantity} and less then{" "}
               {availableQuantity}
             </p>
           )}
@@ -47,10 +48,32 @@ const Purchase = () => {
 
   const handlePurchaseSubmit = (e) => {
     e.preventDefault();
-    const phoneNo = e.target.phone.value;
-    const purchaseAmount = e.target.amount.value;
-    console.log("hello from purchase", phoneNo, purchaseAmount);
+    const amount = parseInt(e.target.amount.value);
+    const total = parseFloat(price)*amount
+    const order = {
+      productName: e.target.productName.value,
+      email: e.target.email.value,
+      displayName: e.target.displayName.value,
+      phone: e.target.phone.value,
+      amount: amount,
+      total: total
+    };
+    const url = `http://localhost:5000/orders`;
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(order),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        // toast.success("Your order is booked");
+        e.target.reset();
+      });
   };
+
   return (
     <>
       <div className="hero-content flex-col justify-around lg:flex-row-reverse">
@@ -93,11 +116,23 @@ const Purchase = () => {
           <form onSubmit={handlePurchaseSubmit} className="card-body">
             <div className="form-control">
               <label className="label">
+                <span className="label-text">Product Name</span>
+              </label>
+              <input
+                type="text"
+                name="productName"
+                className="input input-bordered"
+                value={name}
+                disabled
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
                 <span className="label-text">Email</span>
               </label>
               <input
                 type="email"
-                // placeholder="email"
+                name="email"
                 className="input input-bordered"
                 value={user.email}
                 disabled
@@ -109,7 +144,7 @@ const Purchase = () => {
               </label>
               <input
                 type="text"
-                // placeholder="email"
+                name="displayName"
                 className="input input-bordered"
                 value={user.displayName}
                 disabled
@@ -136,6 +171,7 @@ const Purchase = () => {
                 placeholder="Purchase Amount"
                 name="amount"
                 className="input input-bordered"
+                // defaultValue={minimumQuantity}
               />
             </div>
             <SubmitButton />
