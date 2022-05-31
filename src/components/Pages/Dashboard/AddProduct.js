@@ -8,7 +8,7 @@ const AddProduct = (e) => {
     formState: { errors },
     handleSubmit,
   } = useForm();
-  const imageStoreKey = "3c1f06e572f598cefb6cae407a422a8b";
+  const imageStoreKey = "e86bb22883b47f23918d5642f858a7e4";
 
   const onSubmit = async (data) => {
     const img = data.img[0];

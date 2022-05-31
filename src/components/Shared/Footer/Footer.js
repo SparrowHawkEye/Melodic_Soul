@@ -42,7 +42,7 @@ const Footer = () => {
       <span className="block  text-sm text-gray-500 mb-8 text-center dark:text-gray-400">
         © 2022
         <Link to="/" className="hover:underline hover:text-green-400 ml-1">
-          Bookie House
+          Melodic Soul
         </Link>
         <small className="mx-1">
           by Maksud aka
