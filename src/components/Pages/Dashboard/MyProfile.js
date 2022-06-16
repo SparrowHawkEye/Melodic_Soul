@@ -1,24 +1,43 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+
 import { FaFacebookF, FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+
 import auth from "../../../firebase.init";
 import ProfileUpdateForm from "./ProfileUpdateForm";
 
 const MyProfile = () => {
   const [user] = useAuthState(auth);
-  const {
-    displayName,
-    photoURL: img,
-    email,
-    gender,
-    phoneNo,
-    address,
-    birthday,
-    twitterURL,
-    linkURL,
-    faceURL,
-    gitURL,
-  } = user;
+  const [updateProfile, setUpdateProfile] = useState([]);
+  const [reload, setReload] = useState(false);
+  const { displayName, email } = user;
+
+  useEffect(() => {
+    fetch(`https://secret-temple-83800.herokuapp.com/users/${user?.email}`, {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accesstoken")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        setReload(!reload);
+        setUpdateProfile(result);
+      });
+    }, [user, reload, updateProfile]);
+    const {
+      name,
+      imgLink: img,
+      number: phoneNo,
+      address,
+      date: birthday,
+      twitter: twitterURL,
+      linkedin: linkURL,
+      facebook: faceURL,
+      github: gitURL,
+    } = updateProfile;
+    
+    
   return (
     <div>
       <div className="bg-white p-3 shadow-sm rounded-sm">
@@ -52,7 +71,7 @@ const MyProfile = () => {
           <div className="grid md:grid-cols-2 text-sm">
             <div className="grid  grid-cols-1 md:grid-cols-2">
               <div className="px-4 py-2 font-semibold">Name:</div>
-              <div className="px-4 py-2">{displayName}</div>
+              <div className="px-4 py-2">{name?name:displayName}</div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="px-4 py-2 font-semibold">Email:</div>
@@ -62,12 +81,7 @@ const MyProfile = () => {
                 </a>
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2">
-              <div className="px-4 py-2 font-semibold">Gender:</div>
-              <div className="px-4 py-2">
-                {gender ? gender : "Please Update Your Profile"}
-              </div>
-            </div>
+           
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="px-4 py-2 font-semibold">Phone No:</div>
               <div className="px-4 py-2">

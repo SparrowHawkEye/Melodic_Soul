@@ -1,11 +1,34 @@
 import { signOut } from "firebase/auth";
-import React from "react";
+import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
+  const [updateProfile, setUpdateProfile] = useState([]);
+  const [reload, setReload] = useState(false);
+
+  if(user){
+     const { displayName, email } = user;
+  }
+
+  useEffect(() => {
+    fetch(`https://secret-temple-83800.herokuapp.com/users/${user?.email}`, {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accesstoken")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        setReload(!reload);
+        setUpdateProfile(result);
+      });
+  }, []);
+
+  const { name, imgLink: img } = updateProfile;
+
   const menuItems = (
     <>
       <li>
@@ -35,7 +58,7 @@ const Navbar = () => {
       {user && (
         <>
           <li>
-            <p className="justify-between">{user.displayName}</p>
+            <p className="justify-between">{name?name:user.displayName}</p>
           </li>
           <li>
             <p>{user.email}</p>
@@ -45,7 +68,7 @@ const Navbar = () => {
               to="/"
               onClick={() => {
                 signOut(auth);
-                localStorage.removeItem('accessToken');
+                localStorage.removeItem("accessToken");
               }}
             >
               Sign Out
@@ -113,7 +136,16 @@ const Navbar = () => {
         <div className="dropdown dropdown-end">
           <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
-              <img src="https://api.lorem.space/image/face?hash=33791" alt="" />
+             
+
+            {
+            
+            updateProfile &&
+             <img src={img?img:"https://api.lorem.space/image/face?hash=33791"} alt="" />
+             }
+             {
+               !updateProfile && <img src={user.photoURL?user.photoURL:"https://api.lorem.space/image/face?hash=33791"} alt="" />
+             }
             </div>
           </label>
           <ul

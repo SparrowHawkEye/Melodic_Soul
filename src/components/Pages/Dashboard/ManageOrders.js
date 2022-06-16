@@ -1,4 +1,3 @@
-import React from "react";
 import { useQuery } from "react-query";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
